@@ -1,0 +1,23 @@
+# permissions for end users to view authorizationbindings.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: registry-auth
+    app.kubernetes.io/managed-by: kustomize
+  name: authorizationbinding-viewer-role
+rules:
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationbindings
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationbindings/status
+  verbs:
+  - get

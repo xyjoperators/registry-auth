@@ -1,0 +1,82 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationbindings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationbindings/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationbindings/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationtemplates
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationtemplates/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationtemplates/status
+  verbs:
+  - get
+  - patch
+  - update

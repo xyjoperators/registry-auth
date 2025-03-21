@@ -1,0 +1,27 @@
+# permissions for end users to edit authorizationtemplates.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: registry-auth
+    app.kubernetes.io/managed-by: kustomize
+  name: authorizationtemplate-editor-role
+rules:
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationtemplates
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - registry.xuyunjin.top
+  resources:
+  - authorizationtemplates/status
+  verbs:
+  - get

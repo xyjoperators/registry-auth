@@ -1,0 +1,13 @@
+apiVersion: registry.xuyunjin.top/v1
+kind: AuthorizationTemplate
+metadata:
+  labels:
+    app.kubernetes.io/name: registry-auth
+    app.kubernetes.io/managed-by: kustomize
+  name: authorizationtemplate-sample
+spec:
+  registries:
+    - server: harbor-registry-addr:8443
+      username: admin
+      password: Harbor12345
+

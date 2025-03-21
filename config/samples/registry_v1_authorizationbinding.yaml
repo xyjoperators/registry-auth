@@ -1,0 +1,14 @@
+apiVersion: registry.xuyunjin.top/v1
+kind: AuthorizationBinding
+metadata:
+  labels:
+    app.kubernetes.io/name: registry-auth
+    app.kubernetes.io/managed-by: kustomize
+  name: authorizationbinding-sample
+spec:
+  ref: authorizationtemplate-sample
+  distributes:
+    - namespace: default
+      serviceAccounts:
+        - default
+
