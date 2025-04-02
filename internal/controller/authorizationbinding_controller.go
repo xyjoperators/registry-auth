@@ -278,7 +278,7 @@ func templateConvertSecret(template registryv1.AuthorizationTemplate, distribute
 			Auth:     authFunc(item.Username, item.Password),
 		}
 	}
-	dockerConfigJson := model.DockerConfigJson{Auth: auth}
+	dockerConfigJson := model.DockerConfigJson{Auths: auth}
 	jsonBytes, err := json.Marshal(dockerConfigJson)
 	if err != nil {
 		return v1.Secret{}, err
