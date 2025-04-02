@@ -1,7 +1,7 @@
 package model
 
 type DockerConfigJson struct {
-	Auth map[string]DockerConfigAuth `json:"auth,omitempty"`
+	Auths map[string]DockerConfigAuth `json:"auths,omitempty"`
 }
 
 type DockerConfigAuth struct {
